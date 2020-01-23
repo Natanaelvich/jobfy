@@ -15,16 +15,14 @@
         <p>Open roles :</p>
       </div>
       <div class="topics">
+        <% vagas.forEach(vaga=>{ %>
         <div class="blok">
-          <p class="title">Engineering team</p>
+          <p class="title"><%- vaga.title %></p>
           <p class="description">
-            <a href="vaga"> Fullstack Developer(Remote)</a>
+            <a href="vaga/<%-vaga.id%>"><%- vaga.description %> </a>
           </p>
         </div>
-        <div class="blok">
-          <p class="title">Marketing team</p>
-          <p class="description">Digital marcketing(Sao francisco)</p>
-        </div>
+        <%}) %>
       </div>
     </div>
     <%- include('footer') %>
