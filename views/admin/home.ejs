@@ -11,13 +11,27 @@
   <body>
     <%- include('../header') %>
     <h1>ADD NEW JOB OPPORTUNITY</h1>
-    <form action="" method="post">
-      <label for="">TITLE</label>
-      <input type="text" placeholder="title" name="title" />
-      <label for="">DESCRIPTION</label>
-      <input type="text" placeholder="descriprion" name="description" />
+    <form action="/admin/create-vaga" method="post">
+      <label for="title">TITLE</label>
+      <input
+        id="title"
+        maxlength="20"
+        type="text"
+        placeholder="title"
+        name="title"
+        required
+      />
+      <label for="description">DESCRIPTION</label>
+      <input
+        id="description"
+        type="text"
+        placeholder="description"
+        name="description"
+        required
+      />
       <button type="submit">SALVAR</button>
     </form>
+    <p>Clique <a href="admin/vaga">aqui</a> para gereciar suas vagas</p>
     <%- include('../footer') %>
   </body>
 </html>

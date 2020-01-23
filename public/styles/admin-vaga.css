@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  align-items: center;
+}
+.body {
+  width: 90%;
+}
+ul {
+  margin-bottom: 20px;
+}
+ul:hover {
+  background-color: #f5f5f5;
+}
+ul li {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  justify-content: space-between;
+  padding: 3px 0px;
+}
+
+li .buttons-area {
+  padding-right: 40px;
+}
+.buttons-area a {
+  margin-right: 10px;
+}
+
+.buttons-area .edit {
+  background-color: #49d295;
+  color: #111;
+  padding: 3px 6px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.buttons-area .edit:hover {
+  color: #fff;
+}
+.buttons-area .remove {
+  background-color: #e76e54;
+  color: #111;
+  padding: 3px 6px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.buttons-area .remove:hover {
+  color: #fff;
+}
+
+.area-button-add {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+.button-add {
+  width: 40px;
+  height: 40px;
+  margin-right: 40px;
+  position: relative;
+  animation: anime-scale 600ms alternate infinite ease-in;
+}
+
+.button-add:hover {
+  transform: scale(1.2);
+}
+
+@keyframes anime-scale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
