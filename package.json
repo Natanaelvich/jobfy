@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec sucrase-node ./src/index.js"
+    "dev": "nodemon --exec sucrase-node ./src/sever.js"
   },
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
@@ -17,7 +18,6 @@
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "sucrase": "^3.12.1"
   }
