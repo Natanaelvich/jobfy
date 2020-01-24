@@ -35,21 +35,39 @@ server.get('/admin/vaga', async (req, res) => {
   const vagas = await db.all('select * from vaga')
   res.render('admin/vaga', { vagas })
 })
-// create new vaga
+// create new opportunity
 server.post('/admin/create-vaga', async (req, res) => {
   const { title, description } = req.body
   const db = await dbConnection
-  await db.all(
+  await db.run(
     `insert into vaga (title,description) values ('${title}','${description}')`
   )
   res.redirect('vaga')
+})
+// update opportunity
+server.get('/admin/update-opportunity/:id', async (req, res) => {
+  const { id } = req.params
+  const db = await dbConnection
+  const opportunity = await db.get(`select * from vaga where id = '${id}'`)
+  console.log(opportunity)
+  res.render('admin/updateOpportunity', { opportunity })
+})
+
+server.post('/admin/opportunity/:id/update', async (req, res) => {
+  const { id } = req.params
+  const { title, description } = req.body
+  const db = await dbConnection
+  await db.run(
+    `update vaga set title = '${title}' , description = '${description}' where id= ${id}`
+  )
+  res.redirect('/admin/vaga')
 })
 // remove opportunity
 server.get('/admin/remove-opportunity/:id', async (req, res) => {
   const { id } = req.params
   const db = await dbConnection
-  await db.all(`delete from vaga where id = ${id}`)
-  res.redirect('vaga')
+  await db.run(`delete from vaga where id = ${id}`)
+  res.redirect('/admin/vaga')
 })
 
 const init = async () => {
