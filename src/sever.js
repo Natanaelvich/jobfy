@@ -1,12 +1,14 @@
 import express from 'express'
 import sqlite from 'sqlite'
 import bodyParser from 'body-parser'
-
+import path from 'path'
 // port env or default
 const port = process.e || 3333
 
 const server = express()
-const dbConnection = sqlite.open('jobify.sqlite', { Promise })
+const dbConnection = sqlite.open(path.resolve(__dirname, 'jobify.sqlite'), {
+  Promise,
+})
 
 server.set('view engine', 'ejs')
 server.use(express.static('public'))
