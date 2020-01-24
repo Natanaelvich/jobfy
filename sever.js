@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import path from 'path'
 // port env or default
 const port = process.env.PORT || 3333
-// hahahaha
+
 const server = express()
 const dbConnection = sqlite.open(path.resolve(__dirname, 'jobify.sqlite'), {
   Promise,
