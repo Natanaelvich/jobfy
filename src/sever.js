@@ -6,9 +6,12 @@ import path from 'path'
 const port = process.e || 3333
 
 const server = express()
-const dbConnection = sqlite.open(path.resolve(__dirname, 'jobify.sqlite'), {
-  Promise,
-})
+const dbConnection = sqlite.open(
+  path.resolve(__dirname, '../', 'jobify.sqlite'),
+  {
+    Promise,
+  }
+)
 
 server.set('view engine', 'ejs')
 server.use(express.static('public'))

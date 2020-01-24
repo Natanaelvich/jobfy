@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "builds": [{ "src": "sever.js", "use": "@now/node-server" }],
-  "routes": [{ "src": "/.*", "dest": "server.js" }]
+  "builds": [{ "src": "src/sever.js", "use": "@now/node-server" }],
+  "routes": [{ "src": "/.*", "dest": "src/server.js" }]
 }
