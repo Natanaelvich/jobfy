@@ -2,6 +2,7 @@ import express from 'express'
 import sqlite from 'sqlite'
 import bodyParser from 'body-parser'
 
+// port env or default
 const port = process.e || 3333
 
 const server = express()
