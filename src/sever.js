@@ -3,7 +3,7 @@ import sqlite from 'sqlite'
 import bodyParser from 'body-parser'
 import path from 'path'
 // port env or default
-const port = process.e || 3333
+const port = process.env.PORT || 3333
 
 const server = express()
 const dbConnection = sqlite.open(
