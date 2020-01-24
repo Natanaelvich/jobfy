@@ -2,6 +2,8 @@ import express from 'express'
 import sqlite from 'sqlite'
 import bodyParser from 'body-parser'
 
+const port = process.e || 3333
+
 const server = express()
 const dbConnection = sqlite.open('jobify.sqlite', { Promise })
 
@@ -82,6 +84,6 @@ const init = async () => {
 }
 init()
 
-server.listen(3333, () => {
+server.listen(port, () => {
   console.log('port 3333')
 })
